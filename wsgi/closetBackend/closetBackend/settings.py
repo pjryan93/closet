@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-ON_OPENSHIFT = False
+ON_OPENSHIFT = True
 if os.environ.has_key('OPENSHIFT_REPO_DIR'):
     ON_OPENSHIFT = True
 if os.environ.has_key('OPENSHIFT_APP_NAME'):
@@ -110,7 +110,7 @@ WSGI_APPLICATION = 'closetBackend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
+"""
 if ON_OPENSHIFT:
     # os.environ['OPENSHIFT_DB_*'] variables can be used with databases created
     # with rhc app cartridge add (see /README in this git repo)
@@ -130,7 +130,7 @@ else:
     DATABASES['default'] = dj_database_url.config()
     DATABASES['default']['NAME'] = 'kidclosetdb' 
     print DATABASES
-
+"""
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
