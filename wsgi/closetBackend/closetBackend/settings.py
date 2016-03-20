@@ -110,6 +110,15 @@ WSGI_APPLICATION = 'closetBackend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+# 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        # GETTING-STARTED: change 'db.sqlite3' to your sqlite3 database:
+        'NAME': os.path.join(DATA_DIR, 'db.sqlite3'),
+    }
+}
+
 """
 if ON_OPENSHIFT:
     # os.environ['OPENSHIFT_DB_*'] variables can be used with databases created
